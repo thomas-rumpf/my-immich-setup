@@ -14,3 +14,4 @@ Thumbs.db
 
 # Exclude any other temp files
 *.bak
+.env
