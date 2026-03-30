@@ -1,0 +1,4 @@
+duplicate-finder
+log/*
+media/*
+postgres/*

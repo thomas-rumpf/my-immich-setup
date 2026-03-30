@@ -1,0 +1,15 @@
+# Data directories
+media/
+postgres/
+log/*
+
+# Secrets
+.env
+scripts/immich-API-key.txt
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Exclude any other temp files
+*.bak
