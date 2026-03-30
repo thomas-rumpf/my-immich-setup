@@ -23,8 +23,13 @@ JOHANNA_COUNT=$(grep -c "library/johanna/.*IMG.*\.jpg" "$LOG")
 UTE_COUNT=$(grep -c "library/ute/.*IMG.*\.jpg" "$LOG")
 MESSAGE=$"Immich Daily Backup completed. number of images backed up Thomas:$THOMAS_COUNT Johanna:$JOHANNA_COUNT Ute:$UTE_COUNT"
 
+# Source .env to get NTFY_CHANNEL if it exists
+if [ -f /home/thomas/immich/.env ]; then
+    export $(grep -v '^#' /home/thomas/immich/.env | xargs)
+fi
+
 # send nitification via Ntfy
-curl -d "$MESSAGE" ntfy.sh/RumpfiesAlert > /dev/null
+curl -d "$MESSAGE" "ntfy.sh/${NTFY_CHANNEL:-YourAlertChannel}" > /dev/null
 
 
 

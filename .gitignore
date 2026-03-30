@@ -3,9 +3,10 @@ media/
 postgres/
 log/*
 
-# Secrets
-.env
+# Scripts and templates
 scripts/immich-API-key.txt
+scripts/immich-API-key.txt.example
+scripts/immich-go-upload-command.txt
 
 # OS-specific
 .DS_Store
